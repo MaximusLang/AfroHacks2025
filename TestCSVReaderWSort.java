@@ -15,7 +15,7 @@ class Person1 {
     protected int yearOfGraduation;
 
     public Person1(String name, String university, String major, String fieldAfterGraduation, 
-                  int yearOfGraduation, String notableAchievements, /*String hometown*/) {
+                  int yearOfGraduation, String notableAchievements /*String hometown*/) {
         this.id = counter++;
         this.name = name;
         this.university = university;
@@ -109,7 +109,7 @@ public class TestCSVReaderWSort {
 
     public static void main(String[] args) {
         // Adding data manually for this example
-    	String filename = "C:\\Users\\somex\\Documents\\afrohacksTestData!.csv";
+    	String filename = "/workspaces/AfroHacks2025/blueprint/afrohacks2Final.csv";
     	List<Person1> people = CSVReader1.readCSV(filename);
 
         // Apply the sortFieldAfterGrad() method
@@ -119,4 +119,3 @@ public class TestCSVReaderWSort {
         }
     }
 }
-
