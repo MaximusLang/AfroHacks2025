@@ -11,18 +11,18 @@ class Person1 {
     protected String notableAchievements;
     protected String major;
     protected String fieldAfterGraduation;
-    protected String hometown;
+    //protected String hometown; //delete this 
     protected int yearOfGraduation;
 
     public Person1(String name, String university, String major, String fieldAfterGraduation, 
-                  int yearOfGraduation, String notableAchievements, String hometown) {
+                  int yearOfGraduation, String notableAchievements, /*String hometown*/) {
         this.id = counter++;
         this.name = name;
         this.university = university;
         this.notableAchievements = notableAchievements;
         this.major = major;
         this.fieldAfterGraduation = fieldAfterGraduation;
-        this.hometown = hometown;
+        //this.hometown = hometown; //delete this
         this.yearOfGraduation = yearOfGraduation;
     }
 
@@ -49,7 +49,7 @@ class Person1 {
         System.out.println("Notable Achievements: " + notableAchievements);
         System.out.println("Major: " + major);
         System.out.println("Field After Graduation: " + fieldAfterGraduation);
-        System.out.println("Hometown: " + hometown);
+        //System.out.println("Hometown: " + hometown); //delete this
         System.out.println("Year of Graduation: " + yearOfGraduation);
         System.out.println("--------------------------");
     }
@@ -65,15 +65,14 @@ class CSVReader1 {
             br.readLine(); // Skip header line
             while ((line = br.readLine()) != null) {
                 String[] data = line.split(splitBy);
-                if (data.length == 7) {
+                if (data.length == 6) {         //change 6 to 7 IOT undo
                     Person1 person = new Person1(
                             data[0].trim(),
                             data[1].trim(),
                             data[2].trim(),
                             data[3].trim(),
                             Integer.parseInt(data[4].trim()),
-                            data[5].trim(),
-                            data[6].trim()
+                            data[5].trim()      // add "data[6].trim()" IOT undo
                             
                     );
                     people.add(person);
